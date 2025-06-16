@@ -39,7 +39,7 @@ const UserSchema = new mongoose.Schema(
     },
     branch: {
       type: String,
-      enum: ['CSE', 'ECE', 'ME', 'CE', 'EE', 'CHE', 'BT', 'Other'],
+      enum: ['Computer Science', 'ECE', 'ME', 'CE', 'EE', 'CHE', 'BT', 'Other'],
       required: function() {
         return this.role === 'student';
       },

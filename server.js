@@ -34,6 +34,8 @@ require('./services/socketService')(io);
 
 // Security middlewares
 app.use(helmet());
+console.log("Allowed CORS Origin =>", process.env.CLIENT_URL);
+
 app.use(cors({
   origin: process.env.CLIENT_URL || '*',
   credentials: true

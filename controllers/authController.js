@@ -15,7 +15,7 @@ const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 // @route   POST /api/auth/register
 // @access  Public
 exports.register = asyncHandler(async (req, res) => {
-  const { name, email, phone, password, role, branch, year, semester, rollNumber } = req.body;
+  const { name, email, phone, password, role, branch, year='', semester='', rollNumber } = req.body;
 
   // Check if email already exists
   const userExists = await User.findOne({ email });
